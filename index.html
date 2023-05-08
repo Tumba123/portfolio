@@ -1,46 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div class="hero">
-    <h1>Welcome to my website</h1>
-    <p>Scroll down to see my custom made programs</p>
-  </div>
-  
-  <div class="programs">
-    <div class="program">
-      <div class="program-info">
-        <h2>Warframe Recruiter</h2>
-        <p>A tool to help you find groups to play with in the game Warframe.</p>
-        <p></p>
-        <a href="https://tumba123.github.io/Warframe-Recruiter/">View Website</a>
-      </div>
-    </div>
-    
-    <div class="program">
-      <div class="program-info">
-        <h2>RMEC</h2>
-        <p>A tool to help you calculate the resistances of a resistor network.</p>
-        <p></p>
-        <a href="https://tumba123.github.io/RMEC/">View Website</a>
-      </div>
-    </div>
-  </div>
 
-  <footer>
-    <div class="about-me">
-      <h2>About Me</h2>
-      <p>My name is Sergej, and I am a software developer.</p>
-    </div>
-    <div class="copyright">
-      <p>&copy; Sergej 2023</p>
-    </div>
-  </footer>
-  <script src="app.js"></script>
+    <nav>
+        <ul>
+            <li>
+                <form action="https://www.facebook.com/profile.php?id=100000640044252">
+                    <button class="nav-btn" type="submit">Latest CV</button>
+                </form>
+            </li>
+            <li>
+                <form action="https://www.facebook.com/profile.php?id=100000640044252">
+                    <button class="nav-btn" type="submit">Projects</button>
+                </form>
+            </li>
+            <li>
+                <form action="https://www.facebook.com/profile.php?id=100000640044252">
+                    <button class="nav-btn" type="submit">About</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+
+        <div id="blob"></div>
+            <div id="blur">
+                <div class="center">
+                    <div id="text">
+                        <div class="line">
+                            <p class="word">Sergej</p>
+                            <p class="word">Kulpinac</p>
+                        </div>
+                
+                        <div class="line">
+                            <p class="word fancy gradient-text-electrician">Electrician</p>
+                            <p class="word">&</p>
+                        </div>
+                
+                        <div class="line">
+                            <p class="word gradient-text fancy">Web </p>
+                            <p class="word gradient-text-reverse fancy">Designer</p>
+                        </div>
+                    
+                        <div class="line">
+                            <a 
+                                id="channel-link" 
+                                href="https://www.facebook.com/profile.php?id=100000640044252" 
+                                target="_blank" 
+                                class="word fancy"
+                            >
+                                @SergejKulpinac
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src='app.js'></script>
 </body>
 </html>
