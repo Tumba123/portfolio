@@ -1,23 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
     const blob = document.getElementById("blob");
     const elements = document.querySelectorAll('.fade-in');
-
+    const latestBtn = document.getElementById('latest-cv');
+    const projectsBtn = document.getElementById('projects');
+    const aboutBtn = document.getElementById('about');
+  
     document.body.onpointermove = event => {
-        const { clientX, clientY } = event;
-
-        blob.animate(
-            [
-                { left: `${blob.style.left}`, top: `${blob.style.top}` },
-                { left: `${clientX}px`, top: `${clientY}px` }
-            ],
-            { duration: 3000, fill: "forwards" }
-        );
+      const { clientX, clientY } = event;
+  
+      blob.animate(
+        [
+          { left: `${blob.style.left}`, top: `${blob.style.top}` },
+          { left: `${clientX}px`, top: `${clientY}px` }
+        ],
+        { duration: 3000, fill: "forwards" }
+      );
     };
-
+  
     elements.forEach((element) => {
-        element.classList.add('fade-in');
+      element.classList.add('fade-in');
     });
-});
+  
+    latestBtn.addEventListener('mouseenter', () => {
+      projectsBtn.style.marginLeft = '0';
+      aboutBtn.style.marginLeft = '0';
+      latestBtn.querySelector('.main-btn').style.backgroundColor = 'white';
+      latestBtn.querySelector('.main-btn').style.color = 'black';
+      projectsBtn.querySelector('.main-btn').style.backgroundColor = 'white';
+      projectsBtn.querySelector('.main-btn').style.color = 'black';
+      aboutBtn.querySelector('.main-btn').style.backgroundColor = 'white';
+      aboutBtn.querySelector('.main-btn').style.color = 'black';
+    });
+  
+    latestBtn.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        projectsBtn.style.marginLeft = '-75px';
+        aboutBtn.style.marginLeft = '-65px';
+        latestBtn.querySelector('.main-btn').style.backgroundColor = 'rgba(100, 100, 100, 0.25)';
+        latestBtn.querySelector('.main-btn').style.color = 'white';
+        projectsBtn.querySelector('.main-btn').style.backgroundColor = 'rgba(100, 100, 100, 0.25)';
+        projectsBtn.querySelector('.main-btn').style.color = 'transparent';
+        aboutBtn.querySelector('.main-btn').style.backgroundColor = 'rgba(100, 100, 100, 0.25)';
+        aboutBtn.querySelector('.main-btn').style.color = 'transparent';
+      }, 5000);
+    });
+  });
+  
+  
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
