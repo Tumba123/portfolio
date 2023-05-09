@@ -289,7 +289,7 @@ nav li {
 .nav-btn {
     background-color: rgba(100, 100, 100, 0.25);
     border: none;
-    color: white;
+    color: rgba(100, 100, 100, 0.25);
     padding: 8px 15px;
     text-align: center;
     text-decoration: none;
@@ -344,23 +344,24 @@ nav li {
   }
 
   .gradient-text-electrician:hover {
-    /* Fallback: Set a background color. */
-    background-color: red;
+
+    background: linear-gradient(to right, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
+    background-size: 200% auto;
     
-    /* Create the gradient. */
-    background-image: linear-gradient(90deg, #ccff00, #FAA464);
-    
-    /* Set the background size and repeat properties. */
-    background-size: 100%;
-    background-repeat: repeat;
-  
-    /* Use the text as a mask for the background. */
-    /* This will show the gradient as a text color rather than element bg. */
+    color: #000;
+    background-clip: text;
+    text-fill-color: transparent;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    
+    animation: shine 1s linear infinite;
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
+    }
   }
+
 
   @keyframes fadeIn {
     from {
@@ -374,3 +375,54 @@ nav li {
   .fade-in {
     animation: fadeIn 1s ease-in-out;
   }
+  
+  .latest-btn {
+    z-index: 999;
+  }
+  
+  .projects-btn,
+  .about-btn {
+    margin-left: -75px;
+    z-index: 200;
+    font-size: 0;
+    opacity: 1;
+    transition: margin-left 0.5s, opacity 0.5s;
+  }
+  
+  .projects-btn button,
+  .about-btn button {
+    color: transparent;
+  }
+  
+  .nav-bar {
+    padding: 0;
+    margin-left: 25px;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 9999;
+  }
+  
+  .main-btn {
+    background-color: rgba(100, 100, 100, 0.25);
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    transition: 0.5s;
+  }
+  
+  .main-btn:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .latest-btn:hover ~ .projects-btn button,
+  .latest-btn:hover ~ .about-btn button {
+    color: white;
+  }
+  
