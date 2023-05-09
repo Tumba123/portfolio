@@ -5,25 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
 
     <nav>
-        <ul>
-            <li>
-                <form action="href="CV.html"">
-                    <button class="nav-btn" type="submit">Latest CV</button>
+        <ul class="nav-bar">
+            <li class="latest-btn" id="latest-cv">
+                <form action="CV.html" target="_blank">
+                    <button class="main-btn" type="submit">Latest CV</button>
                 </form>
             </li>
-            <li>
-                <form action="href="projects.html"">
-                    <button class="nav-btn" type="submit">Projects</button>
+            <li class="projects-btn" id="projects">
+                <form action="projects.html" target="_blank">
+                    <button class="main-btn" type="submit">Projects</button>
                 </form>
             </li>
-            <li>
-                <form action="href="about.html"">
-                    <button class="nav-btn" type="submit">About</button>
+            <li class="about-btn" id="about">
+                <form action="about.html" target="_blank">
+                    <button class="main-btn" type="submit">About</button>
                 </form>
             </li>
         </ul>
@@ -51,7 +55,7 @@
                         <div class="line">
                             <a 
                                 id="channel-link" 
-                                href="https://www.facebook.com/profile.php?id=100000640044252" 
+                                href="https://www.linkedin.com/in/sergej-kulpinac-29ab04257/" 
                                 target="_blank" 
                                 class="word fancy"
                             >
@@ -62,6 +66,6 @@
                 </div>
             </div>
         </div>
-    <script src="app.js"></script>
+    <script src='app.js'></script>
 </body>
 </html>
