@@ -4,6 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const latestBtn = document.getElementById('latest-cv');
     const projectsBtn = document.getElementById('projects');
     const aboutBtn = document.getElementById('about');
+
+    const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+    const isRedirectEnabled = true;
+    const redirectUrl = 'https://m.portfolio.com';
+
+    if (isMobile && isRedirectEnabled) {
+      window.location.href = redirectUrl;
+    }
+  });
   
     document.body.onpointermove = event => {
       const { clientX, clientY } = event;
