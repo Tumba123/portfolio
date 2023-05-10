@@ -11,6 +11,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
 </head>
+
+<script language="javascript">
+  <!--
+  if(!window.location.search.substring(1) == "full=true") { // do not redirect if querystring is ?full=true
+    if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/Blackberry/i) || navigator.userAgent.match(/WebOs/i)) { // detect mobile browser
+      window.location.replace("m.sergejkulpinac.com"); // redirect if mobile browser detected
+    }
+  }
+  -->
+</script>
+
 <body>
     <nav>
         <ul class="nav-bar">
