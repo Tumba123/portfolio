@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
     const isRedirectEnabled = true;
-    const redirectUrl = 'https://m.portfolio.com';
+    const redirectUrl = 'https://m.sergejkulpinac.dev';
 
     if (isMobile && isRedirectEnabled) {
       window.location.href = redirectUrl;
