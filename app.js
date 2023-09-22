@@ -30,19 +30,14 @@ if (isMobile) {
     element.classList.add('fade-in');
   });
 
-  latestBtn.addEventListener('mouseenter', () => {
-    projectsBtn.style.marginLeft = '0';
-    aboutBtn.style.marginLeft = '0';
-    latestBtn.querySelector('.main-btn').style.backgroundColor = 'white';
-    latestBtn.querySelector('.main-btn').style.color = 'black';
-    projectsBtn.querySelector('.main-btn').style.backgroundColor = 'white';
-    projectsBtn.querySelector('.main-btn').style.color = 'black';
-    aboutBtn.querySelector('.main-btn').style.backgroundColor = 'white';
-    aboutBtn.querySelector('.main-btn').style.color = 'black';
-  });
-
-  latestBtn.addEventListener('mouseleave', () => {
-    setTimeout(() => {
+  let timeoutID; // Declare a variable to store the timeout ID
+  let isHovering = false; // Flag to track hover state
+  
+  // Function to reset the delay timer
+  function resetDelayTimer() {
+    clearTimeout(timeoutID); // Clear any existing timeout
+    timeoutID = setTimeout(() => {
+      // Reset styles after 5 seconds
       projectsBtn.style.marginLeft = '-75px';
       aboutBtn.style.marginLeft = '-65px';
       latestBtn.querySelector('.main-btn').style.backgroundColor = 'rgba(100, 100, 100, 0.25)';
@@ -52,7 +47,51 @@ if (isMobile) {
       aboutBtn.querySelector('.main-btn').style.backgroundColor = 'rgba(100, 100, 100, 0.25)';
       aboutBtn.querySelector('.main-btn').style.color = 'transparent';
     }, 5000);
+  }
+  
+  // Add event listeners to your elements
+  elements.forEach((element) => {
+    element.addEventListener('mouseenter', () => {
+      // Set the flag to true and reset the delay timer
+      isHovering = true;
+      resetDelayTimer();
+    });
+  
+    element.addEventListener('mouseleave', () => {
+      // Set the flag to false when leaving an element
+      isHovering = false;
+    });
   });
+  
+  latestBtn.addEventListener('mouseenter', () => {
+    // Shift elements to the right and change background colors on mouse enter
+    projectsBtn.style.marginLeft = '0';
+    aboutBtn.style.marginLeft = '0';
+    latestBtn.querySelector('.main-btn').style.backgroundColor = 'white';
+    latestBtn.querySelector('.main-btn').style.color = 'black';
+    projectsBtn.querySelector('.main-btn').style.backgroundColor = 'white';
+    projectsBtn.querySelector('.main-btn').style.color = 'black';
+    aboutBtn.querySelector('.main-btn').style.backgroundColor = 'white';
+    aboutBtn.querySelector('.main-btn').style.color = 'black';
+  
+    // Reset the delay timer on mouse enter
+    resetDelayTimer();
+  });
+  
+  latestBtn.addEventListener('mouseleave', () => {
+    // Reset the delay timer on mouse leave
+    resetDelayTimer();
+  });
+  
+  // Check for hovering on any of the elements
+  function checkHover() {
+    if (isHovering) {
+      resetDelayTimer();
+    }
+  }
+  
+  // Call checkHover periodically to keep checking if the mouse is hovering over any element
+  setInterval(checkHover, 1000); // You can adjust the interval as needed
 });
 
 
